@@ -3,8 +3,11 @@ server:
 
 eureka:
   instance:
+    #主机名，不配置的时候将根据操作系统的主机名来获取
     hostname: localhost
-    lease-expiration-duration-in-seconds: 30
+    #实例超时时间，表示最大leaseExpirationDurationInSeconds秒后没有续约，Server就认为他不可用了，随之就将会将其剔除
+    lease-expiration-duration-in-seconds: 90
+    #实例续约间隔时间 参考：https://blog.csdn.net/qq_26440803/article/details/83113037
     lease-renewal-interval-in-seconds: 30
   client:
     #由于该应用为客户端，只有简单访问服务,所以设置为false,代表不向注册中心注册自己

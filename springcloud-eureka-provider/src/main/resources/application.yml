@@ -9,6 +9,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
+    #主机名
     hostname: localhost
     #将IP注册到Eureka Server上
     prefer-ip-address: true
