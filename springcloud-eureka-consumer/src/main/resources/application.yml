@@ -7,7 +7,9 @@ eureka:
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 30
   client:
+    #由于该应用为客户端，只有简单访问服务,所以设置为false,代表不向注册中心注册自己
     registerWithEureka: false
+    #由于该客户端应用的职责就是调用服务,它需要去检索服务,所以也设置为true
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
